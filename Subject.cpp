@@ -18,7 +18,7 @@ void Subject::setName(std::string name){
 
 void Subject::setType(std::string type){
     this->type=type;
-}
+} 
 
 void Subject::setTime(std::vector<int> time){
     this->time=time;

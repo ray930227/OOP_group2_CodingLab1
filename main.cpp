@@ -17,7 +17,7 @@ void printSubjectTime();//輸出時間對照表
 
 int main() {
     bool check=true;
-    while(check){
+    while(check){ 
         system("cls");//清空終端機畫面
         //------------------------------------------------------
         //根據輸入執行模式

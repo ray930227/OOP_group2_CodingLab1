@@ -108,3 +108,4 @@ void ClassTable::printLine(int width){
     }
     std::cout<<"+"<<std::endl;
 }
+ 

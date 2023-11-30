@@ -23,4 +23,4 @@ public:
     void printLine(int width);
 };
 
-#endif 
+#endif  

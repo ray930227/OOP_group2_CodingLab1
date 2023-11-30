@@ -19,6 +19,6 @@ public:
     std::string getName();
     std::string getType();
     std::vector<int> getTime();
-};
+}; 
 
 #endif // OOP_SUBJECT_H
