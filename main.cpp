@@ -166,12 +166,14 @@ void delSubjectFromClassTable(std::string studentID){
 }
 
 void printSubjectTime(){
+    //把時間對照的數字當作名子放進ClassTable
+    //再使用ClassTable的printTable來輸出
     ClassTable tempClassTable("temp");
     for(int i=0;i<STUDY_HOURS_PRE_DAY;i++){
         for(int j=0;j<STUDY_DAYS_PRE_WEEK;j++){
             std::string tempString="";
-            if(i*5+j>9) tempString.push_back(char((i*5+j)/10)+'0');
-            tempString.push_back(char((i*5+j)%10)+'0');
+            if(i*5+j>9) tempString.push_back(char((i*5+j)/10)+'0'); //實位數(10以下不顯示)
+            tempString.push_back(char((i*5+j)%10)+'0'); //個位數
             Subject tempSubject(tempString,"T",{i*5+j});
             tempClassTable.addSubject(tempSubject);
         }
