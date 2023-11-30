@@ -167,20 +167,14 @@ void delSubjectFromClassTable(std::string studentID){
 
 void printSubjectTime(){
     ClassTable tempClassTable("temp");
-    tempClassTable.printLine(5);
-    std::string week[5]={"Mon.","Tue.","Wed.","Thr.","Fri."};
-    std::cout<<"|";
-    std::cout<<std::setw(3)<<std::left<<"";
-    for(int i=0;i<STUDY_DAYS_PRE_WEEK;i++)
-        std::cout<<"|"<<std::setw(5)<<std::left<<week[i];
-    std::cout<<"|"<<std::endl;
-    tempClassTable.printLine(5);
     for(int i=0;i<STUDY_HOURS_PRE_DAY;i++){
-        std::cout<<"|"<<std::setw(3)<<std::left<<i+1;
         for(int j=0;j<STUDY_DAYS_PRE_WEEK;j++){
-            std::cout<<"|"<<"\033[33m"<<std::setw(5)<<std::left<<i*STUDY_DAYS_PRE_WEEK+j<<"\033[0m";
+            std::string tempString="";
+            if(i*5+j>9) tempString.push_back(char((i*5+j)/10)+'0');
+            tempString.push_back(char((i*5+j)%10)+'0');
+            Subject tempSubject(tempString,"T",{i*5+j});
+            tempClassTable.addSubject(tempSubject);
         }
-        std::cout<<"|"<<std::endl;
-        tempClassTable.printLine(5);
     }
+    tempClassTable.printTable();
 }

@@ -90,8 +90,11 @@ void ClassTable::printTable(){
     for(int i=0;i<STUDY_HOURS_PRE_DAY;i++){
         std::cout<<"|"<<std::setw(3)<<std::left<<i+1;
         for(int j=0;j<STUDY_DAYS_PRE_WEEK;j++){
-            if(classes[i][j].getType()=="R") std::cout<<"|"<<"\033[31m";
-            else std::cout<<"|"<<"\033[34m";
+            std::cout<<"|";
+            std::string tempType=classes[i][j].getType();
+            if(tempType=="R") std::cout<<"\033[31m";
+            else if(tempType=="E") std::cout<<"\033[34m";
+            else if(tempType=="T")std::cout<<"\033[33m";
             std::cout<<std::setw(width)<<std::left<<classes[i][j].getName()<<"\033[0m";
         }
         std::cout<<"|"<<std::endl;
