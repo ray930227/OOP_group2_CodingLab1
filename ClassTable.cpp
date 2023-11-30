@@ -11,9 +11,9 @@ void ClassTable::addSubject(Subject subject) {
     std::vector<int> time=subject.getTime();
     for(int i=0;i<time.size();i++){
         if(classes[time[i]/STUDY_DAYS_PRE_WEEK][time[i]%STUDY_DAYS_PRE_WEEK].getName()!=""){
-            std::cout<<"This subject overlaps with "
+            std::cout<<"This subject overlaps with \033[1m"
                      <<classes[time[i]/STUDY_DAYS_PRE_WEEK][time[i]%STUDY_DAYS_PRE_WEEK].getName()
-                     <<std::endl;
+                     <<"\033[0m\n";
             return;
         }
     }

@@ -62,6 +62,10 @@ void mode2(){
         return;
     }
     std::string studentID=inpputStudentID();
+    system("cls");
+    std::cout<<"\033[1m"<<studentID<<"'s ClassTable:\033[0m \n";
+    std::cout<<"\033[31mRequired\033[0m's subject is red.\n";
+    std::cout<<"\033[34mElective\033[0m's subject is blue.\n";
     showClassTable(studentID);
     showScore(studentID);
 }
