@@ -127,7 +127,7 @@ void addSubjectToClassTable(std::string studentID){
     int t;
     std::cin>>t;
     while(t==-1){
-        std::cout<<"subject's time need at least one hour";
+        std::cout<<"subject's time need at least one hour\n";
         std::cout<<"please enter the subject's time again(enter -1 to end):";
         std::cin>>t;
     }
