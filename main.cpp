@@ -10,7 +10,7 @@ void addClassTable();//新增一個新的課表
 void showClassTable(std::string studentID);//印出某人的課表
 int findTable(std::string studentID);//印出某人的課表在table裡的索引
 void addSubjectToClassTable(std::string studentID);//新增課程到某人的課表裡
-std::string inpputStudentID();//輸入學號的function
+std::string inputStudentID();//輸入學號的function
 void showScore(std::string studentID);//印出某人的學分
 void delSubjectFromClassTable(std::string studentID);//刪除某人的課表裡的某課程
 void printSubjectTime();//輸出時間對照表
@@ -61,7 +61,7 @@ void mode2(){
         std::cout<<"No one's ClassTable has been saved yet.\n";
         return;
     }
-    std::string studentID=inpputStudentID();
+    std::string studentID=inputStudentID();
     system("cls");
     std::cout<<"\033[1m"<<studentID<<"'s ClassTable:\033[0m \n";
     std::cout<<"\033[31mRequired\033[0m's subject is red.\n";
@@ -75,7 +75,7 @@ void mode3(){
         std::cout<<"No one's ClassTable has been saved yet.\n";
         return;
     }
-    std::string studentID=inpputStudentID();
+    std::string studentID=inputStudentID();
     addSubjectToClassTable(studentID);
 }
 
@@ -84,7 +84,7 @@ void mode4(){
         std::cout<<"No one's ClassTable has been saved yet.\n";
         return;
     }
-    std::string studentID=inpputStudentID();
+    std::string studentID=inputStudentID();
     delSubjectFromClassTable(studentID);
 }
 
@@ -140,7 +140,7 @@ void addSubjectToClassTable(std::string studentID){
     table[index].addSubject(temp);
 }
 
-std::string inpputStudentID(){
+std::string inputStudentID(){
     std::string studentID;
     std::cout<<"please enter the studentID:";
     std::cin>>studentID;
